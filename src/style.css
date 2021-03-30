@@ -1,20 +1,123 @@
-*
-{
+:root{
+    --bgClr: rgb(20, 0, 44);
+    --fontClr: rgb(243, 243, 243);
+    --btnClr: rgb(124,2,238);
+    --btnShadClr: rgb(80,0,200);
+    --headFont: 'Felix Titling', serif;
+    --font: serif;
+}
+
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-html,
-body
-{
-    height: 100vh;
-    font-family: 'Poppins';
+a{
+    text-decoration: none;
+    color: #c1c1c1;
+    font-size: 1.4rem;
 }
 
-.webgl
-{
-    position: fixed;
+nav{
+    position: absolute;
     top: 0;
     left: 0;
-    outline: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--headFont);
+    letter-spacing: 2px;
+}
+
+nav a{
+    margin: 10px 20px;
+    z-index: 3;
+    transition: all 0.5s ease;
+    font-weight: 600;
+}
+
+nav a:hover{
+    color: #6a26cd;
+}
+
+.type::selection{
+    color: #111;
+}
+
+*::selection{
+    background-color: var(--btnClr);
+}
+
+body{
+    background-color: var(--bgClr);
+    color: var(--fontClr);
+    font-family: var(--font);
+    overflow: hidden;
+}
+
+.webgl{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(0,-50%);
+    width: 40%;
+}
+
+h1{
+    font-family: var(--headFont);
+    font-size: 4.5rem;
+    font-weight: 400;
+}
+
+.type{
+    color: #6a26cd;
+}
+
+p{
+    font-weight: 200;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.button{
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+    padding: 13px;
+    border-radius: 13px;
+    font-size: 1.15rem;
+    background-color: var(--btnClr);
+    width: auto;
+    margin-top: 30px;
+    transform-origin: top left;
+    transition: 0.5s;
+    z-index: 3;
+}
+
+.buttonShad{
+    position: relative;
+    display: inline-block;
+    padding: 13px;
+    border-radius: 13px;
+    font-size: 1.15rem;
+    background-color: var(--btnShadClr);
+    color: transparent;
+    margin-top: 30px;
+    transform-origin: top left;
+    transition: 0.5s;
+    transform: translate(-100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.button:hover{
+    transform: translate(-5px, -5px);
 }
